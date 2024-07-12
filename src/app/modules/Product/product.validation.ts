@@ -12,6 +12,19 @@ const createProductValidationSchema = z.object({
     })
 })
 
+const updateProductValidationSchema = z.object({
+    body: z.object({
+        name: z.string().optional(),
+        price: z.number().optional(),
+        description: z.string().optional(),
+        image: z.string().optional(),
+        category: z.string().optional(),
+        stock: z.number().optional(),
+        quantity: z.number().optional(),
+    })
+})
+
 export const ProductValidation = {
-    createProductValidationSchema
+    createProductValidationSchema,
+    updateProductValidationSchema
 }
