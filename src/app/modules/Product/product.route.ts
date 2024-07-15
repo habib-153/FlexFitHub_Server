@@ -14,7 +14,7 @@ router.post(
   ProductController.createProduct,
 );
 
-router.patch(
+router.put(
   '/:id',
   validateRequest(ProductValidation.updateProductValidationSchema),
   ProductController.updateProduct,

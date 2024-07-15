@@ -3,16 +3,23 @@ import { TProduct } from './product.interface';
 import { Product } from './product.model';
 
 const getAllProductsFromDB = async (query: Record<string, unknown>) => {
-  const searchableFields = ['name', 'category'];
+  let result;
+  //console.log(query)
+  if (query) {
+    const searchableFields = ['name', 'category'];
 
-  const products = new QueryBuilder(Product.find(), query)
-    .search(searchableFields)
-    .filter()
-    .sort()
-    .paginate()
-    .fields();
+    const products = new QueryBuilder(Product.find(), query)
+      .search(searchableFields)
+      .filter()
+      .sort()
+      .paginate()
+      .fields();
 
-  const result = await products.modelQuery;
+    result = await products.modelQuery;
+  } else {
+    result = await Product.find();
+  }
+
   return result;
 };
 
