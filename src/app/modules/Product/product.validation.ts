@@ -9,6 +9,7 @@ const createProductValidationSchema = z.object({
         category: z.string(),
         stock: z.number(),
         quantity: z.number().optional(),
+        featured: z.boolean().optional()
     })
 })
 

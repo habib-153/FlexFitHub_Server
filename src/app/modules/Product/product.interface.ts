@@ -7,4 +7,5 @@ export type TProduct = {
     category: string;
     stock: number;
     quantity?: number;
+    featured?: boolean;
 }

@@ -14,6 +14,7 @@ const createProduct = catchAsync(async(req: Request, res: Response) => {
         data: result
     })
 })
+
 const getAllProduct = catchAsync(async(req: Request, res: Response) => {
     const query = req.query;
     const result = await ProductService.getAllProductsFromDB(query)
@@ -22,6 +23,17 @@ const getAllProduct = catchAsync(async(req: Request, res: Response) => {
         statusCode: httpStatus.OK,
         success: true,
         message: 'All Products Retrieved Successfully',
+        data: result
+    })
+})
+
+const getFeaturedProduct = catchAsync(async(req: Request, res: Response) => {
+    const result = await ProductService.getFeaturedProductsFromDB()
+
+    sendResponse(res, {
+        statusCode: httpStatus.OK,
+        success: true,
+        message: 'Featured Products Retrieved Successfully',
         data: result
     })
 })
@@ -64,6 +76,7 @@ const deleteProduct = catchAsync(async(req: Request, res: Response) => {
 
 export const ProductController = {
     getAllProduct,
+    getFeaturedProduct,
     getSingleProduct,
     createProduct,
     updateProduct,

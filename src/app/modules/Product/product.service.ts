@@ -23,6 +23,11 @@ const getAllProductsFromDB = async (query: Record<string, unknown>) => {
   return result;
 };
 
+const getFeaturedProductsFromDB = async () => {
+  const result = await Product.find({ featured: true });
+  return result;
+}
+
 const getSingleProductFromDB = async (id: string) => {
   const result = await Product.findById(id);
   return result;
@@ -49,6 +54,7 @@ const deleteProdFromDB = async (id: string) => {
 
 export const ProductService = {
   getAllProductsFromDB,
+  getFeaturedProductsFromDB,
   getSingleProductFromDB,
   createProductIntoDB,
   updateProductInDB,

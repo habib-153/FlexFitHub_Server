@@ -9,6 +9,7 @@ export const productSchema = new Schema<TProduct>({
     category: {type: String, required: true},
     stock: {type: Number, required: true},
     quantity: {type: Number},
+    featured: {type: Boolean}
 })
 
 export const Product = model<TProduct>('Product', productSchema)

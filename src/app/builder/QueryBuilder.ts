@@ -28,7 +28,7 @@ class QueryBuilder<T>{
         //filtering
         const excludeFields = ['searchTerm', 'sort', 'page', 'limit', 'fields', 'skip'];
         excludeFields.forEach((el) => delete queryObj[el]);
-        console.log(queryObj)
+        // console.log(queryObj)
         if(queryObj!.category){
             const categories = (queryObj!.category as string).split(',')
             this.modelQuery = this.modelQuery.find({category: { $in: categories }} as FilterQuery<T>)
