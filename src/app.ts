@@ -8,7 +8,7 @@ const app: Application = express();
 //const port = 3000
 
 app.use(express.json());
-app.use(cors({ origin: ['http://localhost:5173']}));
+app.use(cors({ origin: ['http://localhost:5173', 'https://flex-fit-hub-client.vercel.app']}));
 
 //  application routes
 app.use('/api/v1', router)
