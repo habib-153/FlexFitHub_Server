@@ -28,8 +28,9 @@ const getAllProduct = catchAsync(async(req: Request, res: Response) => {
 })
 
 const getFeaturedProduct = catchAsync(async(req: Request, res: Response) => {
+    //console.log(req)
     const result = await ProductService.getFeaturedProductsFromDB()
-
+    
     sendResponse(res, {
         statusCode: httpStatus.OK,
         success: true,

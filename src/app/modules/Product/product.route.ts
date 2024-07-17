@@ -6,8 +6,8 @@ import { ProductValidation } from './product.validation';
 const router = express.Router();
 
 router.get('/', ProductController.getAllProduct);
-router.get('/:id', ProductController.getSingleProduct);
 router.get('/featured', ProductController.getFeaturedProduct);
+router.get('/:id', ProductController.getSingleProduct);
 
 router.post(
   '/',
