@@ -2,7 +2,7 @@
 
 FlexFitHub is an E-Commerce application for fitness accessories built using Express.js, TypeScript, and MongoDB with Mongoose. It allows you to manage products and orders.
 
-[Server Live Link](assignment-2-one-roan.vercel.app/), [Client Live Link](https://flex-fit-hub-client.vercel.app/), [Client Repository](https://github.com/habib-153/FlexFitHub_Client.git)
+[Server Live Link](https://flex-fit-hub-server.vercel.app/), [Client Live Link](https://flex-fit-hub-client.vercel.app/), [Client Repository](https://github.com/habib-153/FlexFitHub_Client.git)
 
 ## Environment Variables
 
